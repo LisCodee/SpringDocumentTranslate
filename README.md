@@ -1,10 +1,6 @@
-本文档是对spring官方文档的解读，原文档参见
+本文档是对spring官方文档的解读，原文档参见[Spring官方文档](https://docs.spring.io/spring/docs/5.2.5.BUILD-SNAPSHOT/spring-framework-reference/core.html#beans-child-bean-definitions)
 
-[spring官网]: https://docs.spring.io/spring/docs/5.2.5.BUILD-SNAPSHOT/spring-framework-reference/core.html#beans-child-bean-definitions	"Spring 官网"
-
-，本人只是翻译和整理，由于水平有限，部分解读可能不正确，欢迎提出更好的意见和建议！网页版移步
-
-[临时的网站]: http://180.76.184.216/README.html	"临时搭建的网站"
+，本人只是翻译和整理，由于水平有限，部分解读可能不正确，欢迎提出更好的意见和建议！网页版移步[我的临时网页](http://180.76.184.216/README.html)
 
 
 
