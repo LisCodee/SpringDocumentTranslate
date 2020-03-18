@@ -1,3 +1,5 @@
+本文档是对spring官方文档的解读，原文档参见https://docs.spring.io/spring/docs/5.2.5.BUILD-SNAPSHOT/spring-framework-reference/core.html#beans-child-bean-definitions，本人只是翻译和整理，由于水平有限，部分解读可能不正确，欢迎提出更好的意见和建议！网页版移步http://180.76.184.216/README.html
+
 # 1 Spring综述
 
 ## 1.1 jdk环境依赖
@@ -827,7 +829,23 @@ The value of a map key or value, or a set value, can also be any of the followin
 >
 > bean | ref | idref | list | set | map | props | value | null
 
-**Collection Merging **
+**Collection Merging  集合合并**
+
+The Spring container also supports merging collections. An application developer can define a parent <list/>, <map/>, <set/> or <props/> element and have child <list/>, <map/>, <set/> or <props/> elements inherit and override values from the parent collection. That is, the child collection’s values are the result of merging the elements of the parent and child collections, with the child’s collection elements overriding values specified in the parent collection.
+
+> Spring容器还支持合并集合。应用程序开发人员可以定义父元素<list/>、<map/>、<set/>或<props/>元素，并拥有子元素<list/>、<map/>、<set/>或<props/>元素从父集合继承和覆盖值。也就是说，子集合的值是父集合和子集合的元素合并的结果，子集合的元素覆盖父集合中指定的值。
+
+## 2.7 Bean Definition Inheritance Bean定义继承
+
+A bean definition can contain a lot of configuration information, including constructor arguments, property values, and container-specific information, such as the initialization method, a static factory method name, and so on. A child bean definition inherits configuration data from a parent definition. The child definition can override some values or add others as needed. Using parent and child bean definitions can save a lot of typing. Effectively, this is a form of templating.
+
+> bean定义可以包含很多配置信息，包括构造函数参数、属性值和特定于容器的信息，比如初始化方法、静态工厂方法名等等。子bean定义从父定义继承配置数据。子定义可以根据需要覆盖某些值或添加其他值。使用父bean和子bean定义可以节省大量输入。实际上，这是模板的一种形式。
+
+If you work with an `ApplicationContext` interface programmatically, child bean definitions are represented by the `ChildBeanDefinition` class. Most users do not work with them on this level. Instead, they configure bean definitions declaratively in a class such as the `ClassPathXmlApplicationContext`. When you use XML-based configuration metadata, you can indicate a child bean definition by using the `parent` attribute, specifying the parent bean as the value of this attribute. The following example shows how to do so:
+
+> 如果您以编程方式使用ApplicationContext接口，则子bean定义由ChildBeanDefinition类表示。大多数用户在这个级别上不使用它们。相反，它们在类(如ClassPathXmlApplicationContext)中声明式地配置bean定义。当您使用基于xml的配置元数据时，您可以通过使用父属性来指示子bean定义，并将父bean指定为该属性的值。下面的例子演示了如何做到这一点:
+
+
 
 # 3. Testing 测试
 
