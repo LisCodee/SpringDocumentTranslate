@@ -2505,7 +2505,7 @@ Typically, an application developer does not need to subclass `ApplicationContex
 
 > 通常，应用程序开发人员不需要继承ApplicationContext实现类。相反，可以通过插入特殊集成接口的实现来扩展Spring IoC容器。接下来的几节将描述这些集成接口。
 
-### 2.8.1  Customizing Beans by Using a `BeanPostProcessor` 通过BeanPostProcessor自定义Bean
+### 2.8.1  Customizing Beans by Using a `BeanPostProcessor`（后置处理器） 通过BeanPostProcessor自定义Bean
 
 The `BeanPostProcessor` interface defines callback methods that you can implement to provide your own (or override the container’s default) instantiation logic, dependency resolution logic, and so forth. If you want to implement some custom logic after the Spring container finishes instantiating, configuring, and initializing a bean, you can plug in one or more custom `BeanPostProcessor` implementations.
 
@@ -2651,7 +2651,7 @@ org.springframework.scripting.groovy.GroovyMessenger@272961
 }
 ```
 
-这里我又用传统方式实现了一下这个功能，感觉很像拦截器：
+这里我又用传统方式实现了一下这个功能，**这个方法就是在对象创建好返回之前对Bean进行的一些操作，AOP就是基于此**：
 
 ```java
 
